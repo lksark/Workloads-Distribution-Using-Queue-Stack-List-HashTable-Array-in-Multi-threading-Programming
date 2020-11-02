@@ -57,9 +57,31 @@ In c# Console App:  Example_v2.cs.txt
 
 Version ‘3’: Added Array and Hash Table into the code. Randomly generate some data and save into Array / Hash Table.  Example_v3.cs.txt
 
- 
+Version ‘4’: Using C# lock statement. The lock statement acquires the mutual-exclusion lock for a given object, executes a statement block, and then releases the lock. Other threads will have to wait until the lock is released. The statement method same to coding that using Monitor Class above.  Example_v4.cs.txt
+
+Version ‘5’: Using Monitor Class. The ‘try-finally’ block is used so that the ‘isLocked’ variable will always set to false when the try/catch block leaves the execution, regardless the try block terminates normally or terminates due to an exception. Hence allows other threads to read / edit task queue afterwards.  Example_v5.cs.txt
+
+Deadlock / Livelock may happen if statement block is depending on external members.
 
  
+Example 2
+
+In previous example, each subprocess threads will exit individually when found the task queue / stack / list is empty. Main process thread will end when all the sub-process threads are ended.
+
+In some scenarios we want the main program to continue running even when task queue / stack / list is empty, waiting for new tasks to be added into the task queue and letting subprocess threads execute the tasks.
+
+In this example, the subprocess threads and main program will not exit when the task queue / stack / list is empty. Instead, worker threads will enter ‘WaitSleepJoin’ state until new workloads tag numbers are added into the task queue / stack / list. Subprocess worker threads will become Running state when obtained the lock.
+
+Version ‘1’: Although main program will not exit when task queue / stack / list is empty. But this program also unable to exit by itself, except force termination ctrl-c.
+
+c# Console App:  multithreaded_message_queue1.cs.txt
+
+Version ‘2’: amended coding. press ‘q’ button to sequent end all the subprocess worker threads and then main program thread.
+
+c# Console App: multithreaded_message_queue2.cs.txt 
+
+
+
 
 References
 ·       Book ‘Visual C# 2005 How to Program’ by Deitel
