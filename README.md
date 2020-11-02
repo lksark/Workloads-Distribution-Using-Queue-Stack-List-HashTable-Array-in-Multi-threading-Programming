@@ -1,7 +1,7 @@
 # Workloads-Distribution-Using-Queue-Stack-List-HashTable-Array-in-Multi-threading-Programming
 Workloads Distribution Using Queue, Stack, List, Hash Table, Array in Multi-threading Programming
 
-Introduction
+## Introduction
 
 Nowadays computers are all multi-cores. Therefore, we can use Queue, Stack, Priority Queue, List to distribute workloads in multithreading programming.
 
@@ -11,7 +11,7 @@ To tag the workloads, we can use numbering or other form of unique, not repetiti
 
  
 
-Hash Table and Array
+## Hash Table and Array
 Both Hash Table (equivalent to Visual Studio’s Dictionary) and Array can be used to save workloads result if we want to trace the results are coming from which workloads.
 
 Hash Table has memory allocation advantage over Array. Before using Array, we need to declare Array. When declaring an Array, program will reserve a continuous chunk of memory block. In Hash Table, single node size memory is reserved when new node created; each node memory location are scattered around and are not cluster together.
@@ -24,14 +24,14 @@ Hash Table and Array are not suitable to store workload tags, because the tags s
 
  
 
-Queue and Stack
+## Queue and Stack
 If the workloads need to be processed sequentially, we can use queue and stack to save the workloads tag.
 
 Queue is First In First Out (FIFO) manner; Stack is Last In Fist Out (LIFO) manner.
 
  
 
-Priority Queue
+## Priority Queue
 When the workloads have priority, highest priority workloads must be attended first. We can use Priority Queue (command in Visual Studio is ‘SortedList’).
 
 Visual Studio ‘SortedList’ class represents a collection of key-and-value pairs that are sorted by the keys and are accessible by key and by index. Here the keys indicate individual workloads’ priority number, value is the tag number.
@@ -40,12 +40,12 @@ Visual Studio ‘SortedList’ class represents a collection of key-and-value pa
 
  
 
-Linked List
+## Linked List
 When we want to process the workloads in random manner, we can use Linked List to save the workloads tag.
 
  
 
-Example
+### Example
 
 This program print-out numbers 1 to 100000 individually without repeating in random manner using multi-threading programming.
 
@@ -64,7 +64,7 @@ Version ‘5’: Using Monitor Class. The ‘try-finally’ block is used so tha
 Deadlock / Livelock may happen if statement block is depending on external members.
 
  
-Example 2
+### Example 2
 
 In previous example, each subprocess threads will exit individually when found the task queue / stack / list is empty. Main process thread will end when all the sub-process threads are ended.
 
@@ -83,5 +83,5 @@ c# Console App: multithreaded_message_queue2.cs.txt
 
 
 
-References
+## References
 ·       Book ‘Visual C# 2005 How to Program’ by Deitel
