@@ -78,7 +78,7 @@ Version ‘1’: Although main program will not exit when task queue / stack / l
 
 c# Console App:  multithreaded_message_queue1.cs.txt
 
-Version ‘2’: amended coding. press ‘q’ button to one-by-one end all the subprocess worker threads and then main program thread.
+Version ‘2’: amended coding. press ‘q’ button to one-by-one end all the subprocess worker threads and then the main program thread.
 
 c# Console App: multithreaded_message_queue2.cs.txt 
 
