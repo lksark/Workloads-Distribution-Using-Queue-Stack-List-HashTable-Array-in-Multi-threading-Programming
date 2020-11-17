@@ -72,11 +72,13 @@ In some scenarios we want the main program to continue running even when task qu
 
 In this example, the subprocess threads and main program will not exit when the task queue / stack / list is empty. Instead, worker threads will enter ‘WaitSleepJoin’ state until new workloads tag numbers are added into the task queue / stack / list. Subprocess worker threads will become Running state when obtained the lock.
 
+Producer threads will input a number of workloads tag numbers into the task queue / stack / list. Then sleep for 5 seconds. Wake-up, input another number of workloads tag numbers into the task queue / stack / list. Therefore, certain time within these 5 seconds interval, the task queue / stack / list is empty.
+
 Version ‘1’: Although main program will not exit when task queue / stack / list is empty. But this program also unable to exit by itself, except force termination ctrl-c.
 
 c# Console App:  multithreaded_message_queue1.cs.txt
 
-Version ‘2’: amended coding. press ‘q’ button to sequent end all the subprocess worker threads and then main program thread.
+Version ‘2’: amended coding. press ‘q’ button to one-by-one end all the subprocess worker threads and then main program thread.
 
 c# Console App: multithreaded_message_queue2.cs.txt 
 
